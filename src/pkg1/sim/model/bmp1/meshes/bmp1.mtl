@@ -1,0 +1,58 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 02.10.2019 11:03:34
+
+newmtl bmp1_001
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka /home/pc/01_auto_drone/src/pkg1/sim/model/bmp1/materials/texture/bmp1_001.rgb
+	map_Kd /home/pc/01_auto_drone/src/pkg1/sim/model/bmp1/materials/texture/bmp1_001.rgb
+
+newmtl bmp1_003
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka /home/pc/01_auto_drone/src/pkg1/sim/model/bmp1/materials/texture/bmp1_003.rgb
+	map_Kd /home/pc/01_auto_drone/src/pkg1/sim/model/bmp1/materials/texture/bmp1_003.rgb
+
+newmtl bmp1_002
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka /home/pc/01_auto_drone/src/pkg1/sim/model/bmp1/materials/texture/bmp1_002.rgb
+	map_Kd /home/pc/01_auto_drone/src/pkg1/sim/model/bmp1/materials/texture/bmp1_002.rgb
+
+newmtl bmp1_001_dmg
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka /home/pc/01_auto_drone/src/pkg1/sim/model/bmp1/materials/texture/bmp1_001_dmg.rgb
+	map_Kd /home/pc/01_auto_drone/src/pkg1/sim/model/bmp1/materials/texture/bmp1_001_dmg.rgb

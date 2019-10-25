@@ -1,0 +1,40 @@
+<launch>
+
+    <arg name="world_file_name"    default="YOLO_test_4" />
+    <arg name="world_path" default="$(find pkg1)/sim/map/$(arg world_file_name).world" />
+    <!-- Define a static transform from a camera internal frame to the fcu for every camera used -->
+
+
+
+
+
+    <arg name="gui" default="true"/>
+    <arg name="ns" default="/"/>
+    <arg name="model" default="iris_standardcamera"/>
+    <arg name="fcu_url" default="udp://:14540@127.0.0.1:14557"/>
+    <arg name="gcs_url" default="" />   <!-- GCS link is provided by SITL -->
+    <arg name="tgt_system" default="1" />
+    <arg name="tgt_component" default="1" />
+    <arg name="vehicle" default="iris"/>
+    <param name="use_sim_time" value="true" />
+
+
+
+    <!-- octomap -->
+    	<node pkg="octomap_server" type="octomap_server_node" name="octomap_server">
+		<param name="resolution" value="0.05" />
+		
+		<!-- fixed map frame (set to 'map' if SLAM or localization running!) -->
+		<param name="frame_id" type="string" value="map" />
+		
+		<!-- maximum range to integrate (speedup!) -->
+		<param name="sensor_model/max_range" value="10.0" />
+		
+		<!-- data source to integrate (PointCloud2) -->
+		<remap from="cloud_in" to="/camera/depth/points" />
+	
+	</node>
+
+   
+
+</launch>

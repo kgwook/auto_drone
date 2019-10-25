@@ -1,0 +1,159 @@
+<sdf version='1.5'>
+  <model name='iris_standardcamera'>
+    <include>
+      <uri>model://iris</uri>
+    </include>
+
+
+    <include>
+      <uri>model://depth_camera_new</uri>
+      <pose>0.1 0 0 0 0 0</pose>
+    </include>
+    <joint name="depth_camera_new_joint" type="revolute">
+      <child>depth_camera_new::link</child>
+      <parent>iris::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+    <!-- standard_camera -->
+    <include>
+      <name>standard_camera</name>
+      <uri>model://standard_camera</uri>
+      <pose>0.05 0 -0.05 0 0 0</pose>
+    </include>
+    <joint name="standard_camera_joint" type="revolute">
+      <child>standard_camera::cam_link</child>
+      <parent>iris::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+
+    <include>
+      <uri>model://distance_sensor</uri>
+      <pose>0 0 -0.1 0 0 0</pose>
+    </include>
+    <joint name="distance_sensor_joint" type="revolute">
+      <child>distance_sensor::laser_link</child>
+      <parent>iris::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+
+   <!-- Only difference to regular iris is this sensor and a MAVLink stream -->
+    <include>
+      <uri>model://bumper_sensor</uri>
+    </include>
+
+    <joint name="bumper_joint" type="revolute">
+      <child>bumper_sensor::bumper_link</child>
+      <parent>iris::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+
+
+
+    <!-- rplidar -->
+    <!--include>
+      <uri>model://lidar</uri>
+      <pose>-0.12 0 0 0 3.1415 0</pose>
+    </include>
+    <joint name="lidar_joint" type="fixed">
+      <child>lidar::link</child>
+      <parent>iris::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint-->
+
+    <!--include>
+      <uri>model://flow_cam</uri>
+      <pose>-0.12 0.05 0 0 1.5708 1.5708</pose>
+    </include>
+    <joint name="flow_joint" type="revolute">
+      <child>camera::link</child>
+      <parent>iris::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint-->
+
+
+    <!--include>
+      <uri>model://rplidar</uri>
+      <pose>0 0 0.1 0 0 0</pose>
+    </include>
+    <joint name="rplidar_joint" type="revolute">
+      <child>rplidar::link</child>
+      <parent>iris::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint-->
+
+    <!--px4flow camera-->
+    <!--include>
+      <uri>model://px4flow</uri>
+      <pose>0.05 0 -0.05 0 0 0</pose>
+    </include>
+    <joint name="px4flow_joint" type="revolute">
+      <parent>iris::base_link</parent>
+      <child>px4flow::link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint-->
+
+    <!--geotagged images camera-->
+    <!--include>
+      <uri>model://geotagged_cam</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+    <joint name="geotagged_cam_joint" type="fixed">
+      <parent>iris::base_link</parent>
+      <child>geotagged_cam::camera_link</child>
+    </joint-->
+
+
+  </model>
+</sdf>

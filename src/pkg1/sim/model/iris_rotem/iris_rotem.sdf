@@ -1,0 +1,78 @@
+<sdf version='1.6'>
+  <model name='iris_rotem'>
+
+    <include>
+      <uri>model://iris</uri>
+    </include>
+
+    <!-- standard_camera -->
+    <include>
+      <name>standard_camera</name>
+      <uri>model://standard_camera</uri>
+      <pose>1 0 1 -3.14159 0 0</pose>
+    </include>
+    <joint name="standard_camera_joint" type="revolute">
+      <child>standard_camera::cam_link</child>
+      <parent>iris::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+    <include>
+      <uri>model://depth_camera_new</uri>
+      <pose>0.1 0 0 0 0 0</pose>
+    </include>
+    <joint name="depth_camera_new_joint" type="revolute">
+      <child>depth_camera_new::link</child>
+      <parent>iris::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+
+    <include>
+      <uri>model://rplidar</uri>
+      <pose>0 0 0.1 0 0 0</pose>
+    </include>
+    <joint name="rplidar_joint" type="revolute">
+      <child>rplidar::link</child>
+      <parent>iris::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+    <!-- fpv -->
+    <include>
+      <uri>model://fpv_cam</uri>
+      <pose>0 0 0.2 0 0 0</pose>
+    </include>
+    <joint name="fpv_cam_joint" type="fixed">
+      <child>fpv_cam::link</child>
+      <parent>iris::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+
+  </model>
+</sdf>
